@@ -33,5 +33,15 @@ InModuleScope MathPS {
                 { Divide-Integers -FirstNum $num1 -SecondNum $num2 } | Should -Throw "Cannot divide by zero."
             }
         }   
+
+        Context "This test will fail" {
+            It "Should fail" {
+                $num1 = 1
+                $num2 = 1
+
+                $result = Divide-Integers -FirstNum $num1 -SecondNum $num2
+                $result | Should -eq 0
+            }
+        }
     }
 }
